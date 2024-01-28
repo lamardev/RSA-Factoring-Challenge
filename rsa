@@ -4,15 +4,14 @@ from sys import argv
 
 def factorize(num):
     count = 2
-    while ( ((num % count) != 0) and count <= num):
+    while ( ((num % count) != 0 ) and count <= num ):
         count += 1
     print("{}={}*{}".format(num, num//count, count))
 
 def main():
     file = argv[1]
     with open(file, "r") as f:
-        for line in f:
-            factorize(int(line))
+        factorize(int(f.readline()))
 
 if __name__ == '__main__':
     main()
