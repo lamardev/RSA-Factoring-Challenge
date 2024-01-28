@@ -2,13 +2,18 @@
 
 from sys import argv
 
+def factorize(num):
+    count = 2
+    while ( ((num % count) != 0) and count <= num):
+        count += 1
+    print("{}={}*{}".format(num, num//count, count))
+
 def main():
     file = argv[1]
-    count = 2
     with open(file, "r") as f:
         for line in f:
             num = int(line)
-            while ( (num % count) != 0 and count <= num):
-                count += 1
-            print("{}={}*{}".format(num, num//count, count))
-main()
+            factorize(num)
+
+if __name__ == '__main__':
+    main()
